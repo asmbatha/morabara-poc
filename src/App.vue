@@ -1,29 +1,38 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+    <v-app dark>
+        <v-content>
+            <router-view/>
+        </v-content>
+        <v-footer
+            dark
+            height="auto"
+        >
+            <v-card
+            class="flex"
+            flat
+            tile
+            >
+                <v-card-actions class="grey darken-3 justify-center">
+                    <strong>w3ppmedia</strong>
+                </v-card-actions>
+            </v-card>
+        </v-footer>
+    </v-app>
 </template>
+<script>
+    // import conditionalRequire from './conditionalRequire'
 
-<style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
+    export default {
+        mounted() {
+            // moduleIsAvailable
+        },
+        // mixins: [
+        //     conditionalRequire('home', 'mixins/home')
+        //     // require('mixins/global'), // a regular module - loaded always
+        //     // require('mixins/navigation'), // a regular module - loaded always
+        //     // conditionalRequire('home', 'mixins/home'), // only load when on the "/home" page
+        //     // conditionalRequire('profile', 'mixins/profile'), // only load when on the "/profile" page
+        //     // conditionalRequire(['about', 'contact'], 'mixins/forms') // load on "/about" and "/contact"
+        // ]
     }
-  }
-}
-</style>
+</script>
